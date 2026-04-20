@@ -5,10 +5,12 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json ./
-COPY bin ./bin
+COPY --chown=node:node package.json package-lock.json ./
+COPY --chown=node:node bin ./bin
 
-RUN npm install --omit=dev && \
+RUN npm ci --omit=dev && \
     chmod +x bin/muumuu-mcp.js
+
+USER node
 
 ENTRYPOINT ["node", "bin/muumuu-mcp.js"]
