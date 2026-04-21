@@ -1,0 +1,40 @@
+{
+  "name": "@pepabo/muumuu-mcp",
+  "version": "0.1.0",
+  "description": "Official remote MCP server bridge for Muumuu Domain (https://mcp.muumuu-domain.com/mcp).",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "muumuu-domain",
+    "domain",
+    "dns",
+    "pepabo"
+  ],
+  "homepage": "https://muumuu-domain.com/muumuu-domain-mcp/",
+  "bugs": "https://github.com/pepabo/muumuu-mcp/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pepabo/muumuu-mcp.git"
+  },
+  "license": "MIT",
+  "author": "GMO Pepabo, Inc.",
+  "type": "module",
+  "bin": {
+    "muumuu-mcp": "bin/muumuu-mcp.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "README.ja.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "dependencies": {
+    "mcp-remote": "~0.1.38"
+  }
+}
