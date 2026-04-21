@@ -66,12 +66,12 @@ Add to `.cursor/mcp.json`:
 ### OpenAI Codex CLI
 
 ```bash
-codex mcp add --transport http muumuu https://mcp.muumuu-domain.com/mcp
+codex mcp add muumuu --url https://mcp.muumuu-domain.com/mcp
 ```
 
 ### Gemini CLI
 
-See the [Gemini CLI MCP documentation](https://ai.google.dev/gemini-api/docs/cli) for adding remote MCP servers.
+See the [Gemini CLI MCP server documentation](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md) for adding remote MCP servers.
 
 ### Local stdio bridge (advanced)
 

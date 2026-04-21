@@ -16,6 +16,12 @@ const child = spawn(process.execPath, [mcpRemoteEntry, ENDPOINT, ...extraArgs], 
   env: process.env,
 });
 
+for (const sig of ["SIGINT", "SIGTERM", "SIGHUP"]) {
+  process.on(sig, () => {
+    if (!child.killed) child.kill(sig);
+  });
+}
+
 child.on("exit", (code, signal) => {
   if (signal) {
     process.kill(process.pid, signal);

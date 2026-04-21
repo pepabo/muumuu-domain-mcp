@@ -66,12 +66,12 @@ OAuth は Claude が自動で処理します。
 ### OpenAI Codex CLI
 
 ```bash
-codex mcp add --transport http muumuu https://mcp.muumuu-domain.com/mcp
+codex mcp add muumuu --url https://mcp.muumuu-domain.com/mcp
 ```
 
 ### Gemini CLI
 
-リモート MCP サーバー追加方法は [Gemini CLI MCP ドキュメント](https://ai.google.dev/gemini-api/docs/cli) を参照してください。
+リモート MCP サーバー追加方法は [Gemini CLI MCP サーバードキュメント](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md) を参照してください。
 
 ### ローカル stdio ブリッジ（上級者向け）
 
