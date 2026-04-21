@@ -23,8 +23,14 @@
     "muumuu-mcp": "bin/muumuu-mcp.js"
   },
   "files": [
-    "bin"
+    "bin",
+    "README.md",
+    "README.ja.md",
+    "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=20.18.1"
   },
