@@ -88,19 +88,6 @@ For clients that only support stdio transport, use [`mcp-remote`](https://www.np
 }
 ```
 
-Or use the bundled wrapper:
-
-```json
-{
-  "mcpServers": {
-    "muumuu": {
-      "command": "npx",
-      "args": ["-y", "@pepabo/muumuu-mcp"]
-    }
-  }
-}
-```
-
 ## Documentation
 
 - [Official MCP server guide (Japanese)](https://support.muumuu-domain.com/hc/ja/articles/50278568742803)
