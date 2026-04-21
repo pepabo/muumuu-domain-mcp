@@ -11,10 +11,10 @@
     "pepabo"
   ],
   "homepage": "https://muumuu-domain.com/muumuu-domain-mcp/",
-  "bugs": "https://github.com/pepabo/muumuu-mcp/issues",
+  "bugs": "https://github.com/pepabo/muumuu-domain-mcp/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pepabo/muumuu-mcp.git"
+    "url": "git+https://github.com/pepabo/muumuu-domain-mcp.git"
   },
   "license": "MIT",
   "author": "GMO Pepabo, Inc.",

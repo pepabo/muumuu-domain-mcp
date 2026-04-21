@@ -115,7 +115,7 @@ Or use the bundled wrapper:
 ## Support
 
 - For service-related inquiries: [Muumuu Domain Help Center](https://support.muumuu-domain.com/)
-- For issues with this repository: please open a [GitHub Issue](https://github.com/pepabo/muumuu-mcp/issues)
+- For issues with this repository: please open a [GitHub Issue](https://github.com/pepabo/muumuu-domain-mcp/issues)
 
 ## License
 

@@ -1,6 +1,6 @@
 # Security Policy
 
-GMO Pepabo, Inc. takes the security of our software products and services seriously, including this repository (`pepabo/muumuu-mcp`) and the hosted MCP server at `https://mcp.muumuu-domain.com/mcp`.
+GMO Pepabo, Inc. takes the security of our software products and services seriously, including this repository (`pepabo/muumuu-domain-mcp`) and the hosted MCP server at `https://mcp.muumuu-domain.com/mcp`.
 
 ## Reporting a Vulnerability
 

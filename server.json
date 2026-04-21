@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.pepabo/muumuu-mcp",
+  "name": "io.github.pepabo/muumuu-domain-mcp",
   "title": "Muumuu Domain MCP Server",
   "description": "Official remote MCP server bridge for Muumuu Domain.",
   "websiteUrl": "https://muumuu-domain.com/muumuu-domain-mcp/",
