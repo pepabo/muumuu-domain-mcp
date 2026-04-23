@@ -24,10 +24,14 @@
   },
   "files": [
     "bin",
+    "lib",
     "README.md",
     "README.ja.md",
     "LICENSE"
   ],
+  "scripts": {
+    "test": "node --test 'test/**/*.test.js'"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -35,6 +39,7 @@
     "node": ">=20.18.1"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
     "mcp-remote": "~0.1.38"
   }
 }
