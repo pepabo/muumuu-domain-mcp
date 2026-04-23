@@ -88,6 +88,16 @@ For clients that only support stdio transport, use [`mcp-remote`](https://www.np
 }
 ```
 
+### Introspection-only mode (registry tooling)
+
+For MCP registries (e.g. Glama) that index the tool surface in a headless build environment where an interactive OAuth flow cannot complete, the CLI also supports a stdio-only introspection mode:
+
+```bash
+node bin/muumuu-mcp.js --introspect-only
+```
+
+In this mode the CLI serves the static [tool manifest](./lib/tools.js) over stdio. It does **not** make any network calls, does not read the `Authorization` header, and `tools/call` always returns `isError: true`. Do **not** use this mode for real traffic.
+
 ## Documentation
 
 - [Official MCP server guide (Japanese)](https://support.muumuu-domain.com/hc/ja/articles/50278568742803)
