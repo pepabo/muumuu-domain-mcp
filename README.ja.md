@@ -98,6 +98,44 @@ node bin/muumuu-mcp.js --introspect-only
 
 このモードでは [ツールマニフェスト](./lib/tools.js) を stdio 経由で静的に返します。ネットワーク通信は行わず、`Authorization` ヘッダも読まず、`tools/call` は常に `isError: true` を返します。実運用では使わないでください。
 
+## ツール
+
+提供しているツールは 14 個です。**write** はアカウントの状態を変更するツール、**destructive** は取り消しできないツールを表します。クライアントは呼び出す前にユーザーへ確認してください。
+
+### ドメイン検索・取得
+
+| ツール | 説明 |
+| --- | --- |
+| `search-domains` | 複数 TLD にまたがってドメイン候補の空き状況と価格を調べる。予約は行わない。 |
+| `quote-domain-purchase` | 取得前に見積もりを取得する。確定価格・空き状況・短命な購入トークンを返す。 |
+| `purchase-domain` | 見積もりトークンを使って取得を実行する。**write / destructive** — 登録済みクレジットカードに課金される。 |
+| `get-domain-purchase-status` | `purchase-domain` で開始した取得処理の進捗を確認する。 |
+
+### ドメイン管理
+
+| ツール | 説明 |
+| --- | --- |
+| `list-me-domains` | 認証アカウントの保有ドメインを一覧する。状態や FQDN で絞り込み、ページネーション対応。 |
+| `get-me-domain` | 保有ドメイン 1 件の詳細（契約期間・自動更新状態・ネームサーバー）を取得する。 |
+| `update-me-domain` | 保有ドメインのクレジットカード自動更新を有効／無効にする。**write** |
+
+### DNS 管理
+
+| ツール | 説明 |
+| --- | --- |
+| `list-me-dns-records` | ドメイン ID を指定して DNS レコードを一覧する。 |
+| `list-me-dns-records-by-fqdn` | 同じ一覧を、ドメイン ID がわからない場合に FQDN で指定して取得する。 |
+| `create-me-dns-record` | レコードを追加する（A / AAAA / CNAME / MX / TXT / NS / ALIAS / SRV / CAA）。**write** |
+| `update-me-dns-record` | 既存レコードの値または優先度を変更する。**write** |
+| `delete-me-dns-record` | ゾーンからレコードを削除する。**write / destructive** |
+
+### パーソナルアクセストークン
+
+| ツール | 説明 |
+| --- | --- |
+| `list-me-personal-access-tokens` | アカウントに発行済みの PAT を一覧する。 |
+| `delete-me-personal-access-token` | PAT を失効させる。**write / destructive** |
+
 ## ドキュメント
 
 - [ムームードメイン MCP サーバーガイド](https://support.muumuu-domain.com/hc/ja/articles/50278568742803)
