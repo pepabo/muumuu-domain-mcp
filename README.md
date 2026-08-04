@@ -98,6 +98,44 @@ node bin/muumuu-mcp.js --introspect-only
 
 In this mode the CLI serves the static [tool manifest](./lib/tools.js) over stdio. It does **not** make any network calls, does not read the `Authorization` header, and `tools/call` always returns `isError: true`. Do **not** use this mode for real traffic.
 
+## Tools
+
+The server exposes 14 tools. Tools marked **write** change account state; those marked **destructive** cannot be undone — clients should confirm with the user before calling them.
+
+### Domain search & purchase
+
+| Tool | Description |
+| --- | --- |
+| `search-domains` | Check availability and pricing of domain candidates across TLDs. Does not reserve anything. |
+| `quote-domain-purchase` | Get a signed quote — final price, availability, and a short-lived purchase token — before buying. |
+| `purchase-domain` | Execute a purchase with a quote token. **write / destructive** — charges the registered credit card. |
+| `get-domain-purchase-status` | Poll the progress of a purchase started by `purchase-domain`. |
+
+### Domain management
+
+| Tool | Description |
+| --- | --- |
+| `list-me-domains` | List domains owned by the authenticated account, filtered by state or FQDN, paginated. |
+| `get-me-domain` | Fetch one owned domain in full: contract period, auto-renewal status, nameservers. |
+| `update-me-domain` | Turn credit-card auto-renewal on or off for an owned domain. **write** |
+
+### DNS management
+
+| Tool | Description |
+| --- | --- |
+| `list-me-dns-records` | List the DNS records of an owned domain, addressed by domain ID. |
+| `list-me-dns-records-by-fqdn` | The same listing, addressed by FQDN when the domain ID is unknown. |
+| `create-me-dns-record` | Add a record — A, AAAA, CNAME, MX, TXT, NS, ALIAS, SRV, or CAA. **write** |
+| `update-me-dns-record` | Change the value or priority of an existing record. **write** |
+| `delete-me-dns-record` | Remove a record from the zone. **write / destructive** |
+
+### Personal access tokens
+
+| Tool | Description |
+| --- | --- |
+| `list-me-personal-access-tokens` | List the personal access tokens issued for the account. |
+| `delete-me-personal-access-token` | Revoke a personal access token. **write / destructive** |
+
 ## Documentation
 
 - [Official MCP server guide (Japanese)](https://support.muumuu-domain.com/hc/ja/articles/50278568742803)
